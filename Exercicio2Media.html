@@ -1,0 +1,47 @@
+
+<script>
+    
+ let arr = [];
+
+function Array(){
+
+    arr.push(parseFloat(document.getElementById("Nota").value));
+
+    window.alert(arr);
+}
+
+ function Media(){
+   let media= 0;
+
+   for (let i=0;i < arr.length;i++){
+    
+     media += arr[i];
+   }  
+   
+   
+   window.alert(media/arr.length);
+
+}
+
+function limpar(){
+for (let i = arr.length; i > 0; i--) {
+ 
+ arr.pop();
+}
+  alert("Limpado com sucesso!");
+}
+</script>
+<html>
+    <body>
+             
+
+Nota:
+        <input type="Number"id="Nota"   value=""/>
+            
+
+<button type="button" id="bt" onclick="Array()">Adcionar</button>
+        <button type="button" id="bt2" onclick="Media()">Media</button>
+        <button type="button" id="bt3" onclick="limpar()">Limpar</button>
+
+    </body>
+</html>
