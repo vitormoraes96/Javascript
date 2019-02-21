@@ -1,0 +1,45 @@
+
+<script>
+    let imc = 0;
+function IMC(){
+  imc = Peso.value/(altura.value*altura.value)
+ document.getElementById("res").innerHTML =imc;
+}
+
+function Class(){
+  if(imc<=18 ){
+    document.getElementById("clas").innerHTML = "abaixo do peso!";
+    document.getElementById("clas").style.color = "red";
+  }else if(imc <= 25){
+    document.getElementById("clas").innerHTML = "ideal!";
+    document.getElementById("clas").style.color = "blue";
+  }else if(imc <= 30){
+    document.getElementById("clas").innerHTML = "sobre peso!";
+    document.getElementById("clas").style.color = "#CC0";
+  }else if(imc <=35){
+    document.getElementById("clas").innerHTML = "obesidade 1";
+    document.getElementById("clas").style.color = "#E47833";
+  }else if(imc <=40){
+    document.getElementById("clas").innerHTML = "obesidade 2";
+    document.getElementById("clas").style.color = "#8b008b";
+  }else if(imc > 40){
+    document.getElementById("clas").innerHTML ="obesidade 3";
+    document.getElementById("clas").style.color = "black";
+  }
+}
+</script>
+<html>
+    <body>
+        
+
+  <label for="peso">Peso</label>
+  <input type="number" id="Peso" value=""/>
+  <label for="altura">Altura</label>
+  <input type="number" id="altura"value=""/>
+  
+  <button type="button" id="bt1" onclick="IMC()">Calcular IMC</button>
+  <button type="button" id="bt2" onclick="Class()">Classificação</button>
+<p id="res"></p>
+<p id="clas"></p>
+    </body>
+</html>
