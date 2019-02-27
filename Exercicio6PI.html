@@ -1,0 +1,42 @@
+<script>
+    let arr = [];
+
+    function add(){
+        arr.push(document.getElementById("num").value);
+        document.getElementById("valor").innerHTML = arr;
+    }
+    function par(){
+     
+     let par = arr.filter(el => el % 2 === 0);         
+     document.getElementById("pares").innerHTML = par;
+     
+    }
+    function impar(){
+     
+     let impar = arr.filter(el => el % 2 !== 0);         
+     document.getElementById("impares").innerHTML = impar;
+     
+    }
+    
+</script>
+<html>
+    <meta charset="UTF-8" >
+    <body>
+        <h1>Pares/Ímpares</h1>
+
+        <input type="number" id= "num" value=""/>
+        <button type="button" id="add" onclick="add()">Adcionar</button>
+        <p id ="valor"></p>
+
+        
+        
+        <button type="button" id="par" onclick="par()">Imprimir Pares</button>
+        <p id="pares"></p>
+        
+
+        
+        <button type="button" id="impar" onclick="impar()">Imprimir Ímpares</button>
+        <p id="impares"></p>
+
+    </body>
+</html>
