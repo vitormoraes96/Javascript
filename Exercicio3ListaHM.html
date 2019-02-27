@@ -1,0 +1,50 @@
+<script>
+let arr = [];
+
+function add(){
+
+        arr.push({
+        nome: document.getElementById("nome").value,
+        sexo: document.getElementById(m.checked ? "m" : "f").value
+        });
+        alert("adcionado com sucesso!");
+  
+    
+}
+
+function LMasculino(){
+   let masc = arr.filter(function(el){
+       return(el.sexo === "M");
+       });
+    alert(JSON.stringify(masc)); 
+
+}
+
+function LFeminino(){
+    let fem = arr.filter(function(el){
+        return(el.sexo === "F");
+    });
+    alert(JSON.stringify(fem));
+}
+
+
+</script>
+<html>
+    <body>
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" value=""/>    
+        
+        <label for="sexo">Sexo:</label>
+        <input type="radio" id="m" name="sexo" value="M"/>
+        <label for="m">Masculino</label>
+
+        <input type="radio" id="f" name="sexo" value="F"/>
+        <label for="f">Feminino</label>    
+
+
+        <button type="button" onclick="add()">Adcionar</button>
+        <button type="button" onclick="LFeminino()">Listar Mulheres</button>
+        <button type="button" onclick="LMasculino()">Listar Homens</button>
+
+    </body>
+</html>
