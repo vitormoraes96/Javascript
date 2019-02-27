@@ -1,0 +1,31 @@
+<script>
+    let arr = [];
+    function add(){
+        arr.push(document.getElementById("nome").value);
+        alert("Adicionado com sucesso!");
+    }
+
+    function busca(){
+
+        const filterItems = (query) => {
+            return arr.filter(el => el.toLowerCase().indexOf(query.toLowerCase()) > -1);
+        };
+        document.getElementById("demo").innerHTML = filterItems("nomeB");
+    }
+</script>
+<html>
+    <head>
+        <meta charset ="UTF-8"/>
+    </head>
+    <body>
+        <h1>Cadastro</h1>
+        <input type="text" id="nome" value=""/>
+        <button type = "button" id="add" onclick="add()">Adicionar</button>
+        <div>
+            <h1>Buscar por nome</h1>
+        <input type="text" id="nomeB" value=""/>
+        <button type = "button" id="busca" onclick="busca()">buscar</button>
+        <p id="demo"></p>
+        </div>
+    </body>
+</html>
