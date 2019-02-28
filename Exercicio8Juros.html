@@ -1,0 +1,57 @@
+<script>
+    function calc(){
+    let data = ((Date.parse(new Date()))- (Date.parse(document.getElementById("data").value)))/(24*60*60*1000);
+    let valor = parseFloat(document.getElementById("valor").value);
+    let juros = (parseFloat(document.getElementById("Juros").value/30)*(data/100))*valor;
+    let multa = parseFloat(((document.getElementById("Multa").value)/100)*valor);
+    let total = (valor+multa+juros);
+    
+    document.getElementById("m").innerHTML = multa.toFixed(2);
+    document.getElementById("d").innerHTML = data.toFixed(0);
+    document.getElementById("j").innerHTML = juros.toFixed(2);
+    document.getElementById("res").innerHTML = total.toFixed(2); 
+    
+    }
+
+</script>
+
+
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1 id = "title">Calculadora de Parcelas</h1>
+        <div id="ali">
+
+        <h2>juros por mês %</h2>
+        <input type="number" id="Juros" value=""/>
+        <h2>multa %</h2>
+        <input type="number" id="Multa" value=""/>
+        <div>
+        <h2>Data Vencimento</h2>
+        <input type="date" id="data" value =""/>
+        <h2>valor</h2>
+        <input type="number" id="valor" value=""/>
+        <button type="button" id="bt1" onclick = "calc()">Calcular</button>
+       
+        <h3>Multa R$</h3>
+        <p id="m"></p>
+
+        <h3>Dias Atraso</h3>
+        <p id="d"></p>
+        
+        <h3>Juros R$</h3>
+        <p id="j"></p>
+        
+        <h3>Total R$</h3>
+        <p id="res"></p>
+
+      
+
+       
+       
+    </div>
+    </body>
+
+</html>
