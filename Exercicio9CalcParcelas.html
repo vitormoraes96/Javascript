@@ -5,44 +5,40 @@
     function calc(){
         let por = (a,b) => a/100*b; // Porcentagem * o valor da parcela
         let juros = (y,z) => parseFloat(i("juros").value/30).toFixed(2)*por(y,z); // calculando juros
-        let multa = i("multa").value;
-        
+        let multa = i("multa").value;    
+        var Tvalor = 0;
+        var Tmulta = 0;
+        var Tdata  = 0;
+        var Tjuros = 0;
+        var Ttotal = 0;
         for(let c = 1; c < 4; c++){ // for para receber e apresentar os valores
            let valor = parseFloat(i("valor"+c).value);
            let data  = parseFloat(d("data"+c));
            let juros1 = juros(data,valor);
            let multa1 = por(multa,valor);
            let total = valor+multa1+juros1;
-
             i("Rdata"+c).innerHTML = data.toFixed(0);
             i("Rjuros"+c).innerHTML= juros1.toFixed(2);
             i("Rmulta"+c).innerHTML= multa1;
             i("Rtotal"+c).innerHTML= total.toFixed(2);
-
-            soma(valor,data,juros1,multa1,total);
-
-
+            Tvalor +=valor;
+            Tmulta +=multa1;
+            Tdata += data;
+            Tjuros+= juros1;
+            Ttotal+= total;
         }
-       /* function soma(valor,data,juros1,multa1,total){
-            var totalM = multa1++;
-            var totalD = data++;
-            var totalJ = juros1++;
-            var Ttotal = total++;
-            i("totalM").innerHTML = totalM;
-            i("totalD").innerHTML = totalD.toFixed(0);
-            i("totalJ").innerHTML = totalJ.toFixed(2);
+            i("totalM").innerHTML = Tmulta;
+            i("totalD").innerHTML = Tdata;
+            i("totalJ").innerHTML = Tjuros.toFixed(2);
             i("total").innerHTML = Ttotal.toFixed(2);
-        }*/
-
     }
-
 </script>
 
 <html>
     <head>
         <h1 id = "title">Calculadora de Parcelas</h1>
     </head>
-    <style>
+<style>
     #title{
         font-family: sans-serif;
         text-align: center;
@@ -87,8 +83,7 @@
         font-size: 15pt;
    
     }
-
-    </style>
+</style>
     <body>
             <div id = "def" >
                 <div id="l">
@@ -148,7 +143,10 @@
                         <div>
                             <hr style="margin-left:340px;">                          
                             <button type="button" id="bt1" onclick = "calc()">Calcular</button>
-                            <label id="totalM"></label> <label id="totalD"></label> <label id="totalJ"></label> <label id="total"></label> 
+                            <label id="totalM" style="padding-right: 20px;"></label>
+                             <label id="totalD" ></label>
+                              <label id="totalJ"></label>
+                               <label id="total"></label> 
                         </div>
                     </div>    
            
