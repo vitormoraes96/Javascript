@@ -38,95 +38,87 @@
     <head>
         <h1 id = "title">Calculadora de Parcelas</h1>
     </head>
-<style>
-    #title{
-        font-family: sans-serif;
-        text-align: center;
-        font-size: 50pt;           
-    }
-    #def{
-        font-family: sans-serif;
-        font-size: 15pt;
-        width: 70%;
-        margin: auto; 
-        box-shadow: 0px 0px 10px black;
-        padding: 20px;
-        box-sizing: border-box;   
-    }
-    #m input{
-       margin-top: 20px;
-       margin-left: 100px;
-       width: 10%;
-    }
-    #j input{
-       margin-left: 22px;
-       width: 10%;
-    }
-    #d input{
-       margin-left: 78px;
-       margin-top: 20px;
-       margin-bottom: 100px;
-    }
-    #data input{
-        margin-right: 5px;
-        margin-bottom: 5px;
+    <meta charset="utf-8">
+    <style>
+        #title{
+            font-family: sans-serif;
+            text-align: center;
+            font-size: 50pt;           
+        }
+
+        #d input{
+        margin-left: 78px;
         margin-top: 20px;
-                
-    }
-    #data label{
-        margin-right: 50px;
-        padding-left: 25px;
-    }
-    #bt1{
-        margin-top: 20px;
-        width:39%;
-        font-size: 15pt;
-   
-    }
-</style>
+        margin-bottom: 100px;
+        }
+        .data input{
+            margin-right: 5px;
+            margin-bottom: 5px;
+            margin-top: 20px;
+                    
+        }
+        .data label{
+            margin-right: 70px;
+            margin-left: 30px;
+        }
+        #bt1{
+            margin-top: 20px;
+            width:26%;
+            font-size: 15pt;
+            margin: auto;
+        
+        }
+        .topnav input{
+        margin-bottom: 20px;
+        
+        }
+        .texto label{
+        margin-bottom: 10px;
+        margin-right: 60px;
+            
+        }
+    </style>
     <body>
-            <div id = "def" >
-                <div id="l">
-                    <div id ="j">
+        
+                <div class="top">
+                    <div class = "topnav">
                         <label>Juros por mês %</label>
-                        <input  type="number" id="juros" value ="" />
+                        <input  type="number" id="juros" value ="" style="margin-left: 10px;"/>
                     </div>
-                    <div id ="m">
+                    <div class = "topnav">
                         <label>Multa %</label>
-                        <input type="number" id="multa" value =""/>
+                        <input type="number" id="multa" value ="" style="margin-left: 60px;"/>
                     </div>
-                
-                    <div id = "d">
+                    <div class = top"topnav">
                         <label>Data Atual</label>
-                        <input type="date"   id="data"  value =""/>
-                      
-                        <p id="re"></p>
-                        <p id="mu"></p>
-                        <p id ="to"></p>
+                        <input type="date"   id="data"  value ="" style="margin-left: 46px;"/>
                     </div>
                 </div>
-                <div id = "valor"></div>
+                
+              
+                <div class="alinhar">
+                    <div class="texto" >
                         <label>Valor de Parcela R$</label>
                         <label>Data Vencimento</label>                        
-                        <label style="margin-left: 25px;">Multa R$</label>
-                        <label style="margin-left: 25px;">Dias Atraso</label>
-                        <label style="margin-left: 25px;">Juros R$</label>
-                        <label style="margin-left: 25px;">Total R$</label>
-
-                    <div id = "data">
-                        <div >
+                        <label>Multa R$</label>
+                        <label >Dias Atraso</label>
+                        <label >Juros R$</label>
+                        <label >Total R$</label>
+                    </div>
+                    <div class = "data">
+                        <div class = "d" >
                             <input type="number" id="valor1" value=""/>
                             <input type="date" id="data1" value =""/>                       
-                            <label id="Rmulta1" style="padding-right: 20px;"></label>
-                            <label id="Rdata1"  style="padding-right: 30px;"></label>
+                            <label id="Rmulta1"></label>
+                            <label id="Rdata1" ></label>
                             <label id="Rjuros1"></label>
                             <label id="Rtotal1"></label>
                         </div>
                         <div>
                             <input type="number" id="valor2" value=""/>
                             <input type="date" id="data2" value =""/>
-                            <label id="Rmulta2" style="padding-right: 20px;"></label>
-                            <label id="Rdata2"  style="padding-right: 30px;"></label>
+                            <label id="Rmulta2" ></label>
+                            <label id="Rdata2"  ></label>
                             <label id="Rjuros2"></label>
                             <label id="Rtotal2"></label>
 
@@ -134,8 +126,8 @@
                         <div>
                             <input type="number" id="valor3" value=""/>
                             <input type="date" id="data3" value =""/>
-                            <label id="Rmulta3"style="padding-right: 20px;"></label>
-                            <label id="Rdata3" style="padding-right: 30px;"></label>
+                            <label id="Rmulta3"></label>
+                            <label id="Rdata3"></label>
                             <label id="Rjuros3"></label>
                             <label id="Rtotal3"></label>
 
@@ -143,10 +135,10 @@
                         <div>
                             <hr style="margin-left:340px;">                          
                             <button type="button" id="bt1" onclick = "calc()">Calcular</button>
-                            <label id="totalM" style="padding-right: 20px;"></label>
-                             <label id="totalD" ></label>
-                              <label id="totalJ"></label>
-                               <label id="total"></label> 
+                            <label id="totalM"  ></label>
+                             <label id="totalD"   ></label>
+                              <label id="totalJ" ></label>
+                               <label id="total" ></label> 
                         </div>
                     </div>    
            
